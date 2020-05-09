@@ -1,1 +1,1 @@
-This is a game of rock, paper, scissors and javascript project for The Odin Project.
+This is a game of rock, paper, scissors javascript project for The Odin Project.
