@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<div id="container"></div>
+<h1>Rock, Paper, Scissors</h1>
+<button id="rockBtn" class="btn" value="rock" onclick="playRock()">Rock</button>
+<button id="paperBtn" class="btn" value="paper" onclick="playPaper()">Paper</button>
+<button id="scissorBtn" class="btn" value="scissors" onclick="playScissors()">Scissors</button>
+</head>
+<body>
+
+<script>
+    let match = 0;
+    let playerWin = 0;
+    let compWin = 0;
+    const container = document.querySelector('#container');
+    const anounce = document.createElement('p');
+    const showCompScore = document.createElement('p');
+    const showPlayerScore = document.createElement('p');
+
+// function to randomly generate a computer's choice for round from array
+    function computerPlay() {
+    let randomOptions = ["rock", "paper", "scissors"];
+
+    let randomSelection = randomOptions[math.floor(math.random()*randomOptions.length)];
+    return randomSelection;
+    }
+
+// function to call when button event is initialised
+    function playRock(playerSelection) {
+        if (match<5) {
+        let computerSelection = randomSelection;
+        if (playerSlection == "rock" && computerSelection == "rock") {
+            return 'It\'s a draw'
+        }
+        else if (playerSelection == "rock" && computerSelection == "paper") {
+            return "You lose"
+            compWin+=1;
+        }
+        else {
+        return "You win"
+        playerWin+=1;
+    }
+    match += 1;
+    }
+};
+    function playPaper(playerSelection) {
+        if (match<5) {
+        if (playerSelection == "paper" && computerSelection == "paper") {
+            return "It\'s a draw"
+        } 
+        else if (playerSelection == "paper" && computerSelection == "scissors") {
+            return "You lose"
+            compWin+=1;
+        }
+        else {
+            return "You win"
+            playerWin+=1;
+        }
+    match += 1;
+    }
+    };
+
+    function playScissors(playerSelection) {
+        if (match<5) {
+        if (playerSelection == "scissors" && computerSelection == "scissors") {
+            return "It\'s a draw"
+        }
+        else if (playerSelection == "scissors" && computerSelection == "rock") {
+            return "You lose"
+            compWin+=1;
+        }
+        else {
+            return "You win"
+            playerWin+=1;
+        }
+        match += 1;
+    }
+    };
+
+    // Function to determine winner
+    function outcome(playerWin, compWin) {
+        if (match==5) {
+            if (playerWin > compWin) { 
+            anounce.textContent = "You win the game!"
+            }
+            else if (playerWin < compWin) {
+            anounce.textContent = "You lost the game!"
+            }
+            else {
+            anounce.textContent = "No winners this time"
+            }
+        }
+        container.appendChild('p');
+    };
+
+</script>
+</body>
